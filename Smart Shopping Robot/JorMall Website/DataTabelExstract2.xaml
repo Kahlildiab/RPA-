@@ -1,0 +1,359 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DataTabelExstract" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_DataExctract" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>DataTabelExstract_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DataTabelExstract" sap:VirtualizedContainerService.HintSize="1156,2892" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap2010:Annotation.AnnotationText="PDD Section:&#xA;Pre Condition:&#xA;Post Condition:&#xA;Expected Arguments:" DisplayName="Sequence || Click to Search" sap:VirtualizedContainerService.HintSize="680,2848.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="XamalFile" />
+        <Variable x:TypeArguments="s:DateTime" Name="DateTime_TimeStart" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message || Start circle" sap:VirtualizedContainerService.HintSize="646.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[XamalFile + &quot;Start&quot;]" />
+      <Assign DisplayName="Assign || Time For WorkFlow" sap:VirtualizedContainerService.HintSize="646.4,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[DateTime_TimeStart]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[Now]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="646.4,2227.2" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+        <ui:RetryScope.ActivityBody>
+          <ActivityAction>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="604.8,2019.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch.Try>
+                <Sequence DisplayName="Sequence || Info User " sap:VirtualizedContainerService.HintSize="568,1764.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="PreCondition " sap:VirtualizedContainerService.HintSize="483.20000000000005,934.4" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="str_Search" />
+                      <Variable x:TypeArguments="x:Boolean" Name="str_View" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:UiElementExists DisplayName="Element Exists 'LI'" Exists="[str_View]" sap:VirtualizedContainerService.HintSize="449.6,139.2" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f25fa60b-4910-4448-9663-24653507060d" InformativeScreenshot="8d3ff9d3971311496e1b7c0a430ef171" Selector="&lt;html app='msedge.exe' title='*- JorMall' /&gt;&lt;webctrl parentid='shopify-section-search-template' tag='LI' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:UiElementExists>
+                    <If Condition="[str_View]" sap:VirtualizedContainerService.HintSize="449.6,735.2" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Post Condition Tested and Success&quot;]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,348" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Post Condition Failed&quot;]" />
+                          <Throw Exception="[new System.Exception(&quot; Post Condition at File :: &quot;+XamalFile+&quot; Failed&quot;)]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="534.4,690.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="str_Search" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Samsung tv QLED 65 inch - JorMall" sap:VirtualizedContainerService.HintSize="500.8,598.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="469ae286-0d15-4951-8e0e-a03f870e7aee" Version="V2">
+                      <uix:NApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="467.2,358.4" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name=' Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Titel'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Price' Sort='Desc'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='NumberColumnFormat' DecimalSeparator='.' ThousandsSeparator=',' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='href' name2='Column2' attr2='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="433.6,189.6" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="Rows" MaximumResults="5" ScopeIdentifier="469ae286-0d15-4951-8e0e-a03f870e7aee" Version="V4">
+                              <uix:NExtractData.Target>
+                                <uix:TargetAnchorable BrowserURL="https://jormall.net/search?type=product&amp;q=Samsung+tv+QLED+65+inch*" DesignTimeRectangle="86, -13, 1748, 4850" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='collection__dynamic-part' parentid='shopify-section-search-template' tag='DIV' /&gt;" Guid="c71b424c-8ae6-41a4-a5c7-0c70341beeb8" InformativeScreenshot="58957b60f58cbd6089360639d4c33d81.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Samsung tv QLED 65 inch - JorMall' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                              </uix:NExtractData.Target>
+                            </uix:NExtractData>
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="sd:DataTable">[out_DataExctract]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="sd:DataTable">[ExtractDataTable]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ActivityAction>
+                      </uix:NApplicationCard.Body>
+                      <uix:NApplicationCard.TargetApp>
+                        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Edge" ContentHash="-mcdJaaS-EyJaobSUXAwLg" IconBase64="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" InformativeScreenshot="c63f995e0c8681b5352a80525d9c29e5.jpg" Reference="lwgu0_wDk0e-ei5_0qIliQ/5NtwONVuv0mcBY44E52l6A" Selector="&lt;html app='msedge.exe' title='Samsung tv QLED 65 inch - JorMall' /&gt;" Title="Samsung tv QLED 65 inch - JorMall" Url="https://jormall.net/search?type=product&amp;q=Samsung+tv+QLED+65+inch*" Version="V1" />
+                      </uix:NApplicationCard.TargetApp>
+                    </uix:NApplicationCard>
+                  </Sequence>
+                  <Sequence DisplayName="PostCondition" sap:VirtualizedContainerService.HintSize="534.4,957.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="str_Product" />
+                      <Variable x:TypeArguments="x:Boolean" Name="str_View2" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:UiElementExists DisplayName="Element Exists 'BUTTON'" Exists="[str_View2]" sap:VirtualizedContainerService.HintSize="449.6,139.2" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="10334ec0-70d8-4765-a7df-30b58ed4f9b9" InformativeScreenshot="d1aac33a22e0d357be768327000b061d" Selector="&lt;html app='msedge.exe' title='* - JorMall' /&gt;&lt;webctrl aaname='View' parentid='shopify-section-search-template' tag='SPAN' visibleinnertext='View' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <If Condition="[str_View2]" sap:VirtualizedContainerService.HintSize="449.6,735.2" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Post Condition Tested and Success&quot;]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,348" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Error" Message="[&quot;Post Condition Failed&quot;]" />
+                          <Throw Exception="[new System.Exception(&quot; Post Condition at File :: &quot;+XamalFile+&quot; Failed&quot;)]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="520,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                  </ActivityAction>
+                </Catch>
+                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="520,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                    </ActivityAction.Argument>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </ActivityAction>
+        </ui:RetryScope.ActivityBody>
+        <ui:RetryScope.Condition>
+          <ActivityFunc x:TypeArguments="x:Boolean" />
+        </ui:RetryScope.Condition>
+      </ui:RetryScope>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="561.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[XamalFile +&quot; Ended , Flow Time :: &quot;+(Now-DateTime_TimeStart).Seconds.ToString]" />
+    </Sequence>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Samsung tv QLED 65 inch - JorMall" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="ed9275c5-97bc-4a4a-927a-0e684d2aab28" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name=' Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Titel'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Price' Sort='Desc'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='NumberColumnFormat' DecimalSeparator='.' ThousandsSeparator=',' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='href' name2='Column2' attr2='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="5" ScopeIdentifier="ed9275c5-97bc-4a4a-927a-0e684d2aab28" Version="V4">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://jormall.net/search?type=product&amp;q=Samsung+tv+QLED+65+inch*" DesignTimeRectangle="86, 362, 1748, 4850" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='collection__dynamic-part' parentid='shopify-section-search-template' tag='DIV' /&gt;" Guid="b680cc64-b67f-4b52-87b1-04236d2edb7f" InformativeScreenshot="5709ecf1eb0e2bb5aaf7788c20e0edda.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Samsung tv QLED 65 inch - JorMall' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Edge" IconBase64="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" InformativeScreenshot="cfffb50238ca7d8e5e95307348c880ef.jpg" Selector="&lt;html app='msedge.exe' title='Samsung tv QLED 65 inch - JorMall' /&gt;" Title="Samsung tv QLED 65 inch - JorMall" Url="https://jormall.net/search?type=product&amp;q=Samsung+tv+QLED+65+inch*" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
